@@ -1,0 +1,16 @@
+  h1 {
+    color: rgb(59, 59, 59);
+    background-color: rgb(168, 168, 168);
+  }
+
+  h2 {
+    color: blue;
+  }
+
+  #artigo1 {
+    background-color: rgb(194, 194, 194);
+  }
+
+  .corDeFundo {
+    background-color: greenyellow;
+  }
