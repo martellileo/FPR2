@@ -1,0 +1,50 @@
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.container nav{
+  /* padding: 20px; */
+  align-self: flex-start;
+  width: 20%;
+}
+
+li {
+  border: 1px solid rgb(180, 180, 180);
+  background-color: lightgrey;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+  /* text-wrap: nowrap; */
+}
+
+.container section{
+  margin: 10px;
+  padding: 20px;
+  width: 60%;
+}
+
+.container aside {
+  margin: 10px;
+  padding: 20px;
+  background-color: dodgerblue;
+  border-radius: 15px;
+  color: white;
+  width: 20%
+}
+
+footer{
+  background-color: lightgray;
+  border: 1px solid rgb(180, 180, 180);
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+header {
+  background-color: lightgreen;
+}
