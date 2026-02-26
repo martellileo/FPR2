@@ -103,12 +103,6 @@ button:hover {
   button {
     background-color: #2563eb;
     color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 20px;
   }
 
   button:hover {
@@ -116,13 +110,7 @@ button:hover {
   }
 }
 
-input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-textarea {
+input, textarea {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -153,8 +141,7 @@ footer {
     flex-direction: column;
   }
 
-  #diferenciais p,
-  #depoimentos p {
+  #diferenciais p, #depoimentos p {
     width: 100%;
   }
 }
