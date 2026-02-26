@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+}
+
+.container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  background-color: #2563eb;
+  color: white;
+  padding-bottom: 60px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+
+    li {
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+button {
+  background-color: white;
+  color: #1e40af;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+#sobre {
+  ul {
+    margin-top: 10px;
+  }
+}
+
+#diferenciais {
+  p {
+    background-color: #f1f5f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0px;
+    width: 30%;
+  }
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+}
+
+#depoimentos {
+  background-color: #e2e8f0;
+
+  p {
+    background-color: #f1f5f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px 0px;
+    width: 49%;
+  }
+}
+
+#inscricao .container {
+  display: block;
+}
+
+#inscricao form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 10px 0;
+  gap: 10px;
+
+  button {
+    background-color: #2563eb;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background-color: #1e40af;
+  }
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .linha {
+    flex-direction: column;
+  }
+
+  #diferenciais p,
+  #depoimentos p {
+    width: 100%;
+  }
+}
