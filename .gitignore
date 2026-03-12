@@ -1,0 +1,76 @@
+# Angular local
+/FPR2/node_modules
+/FPR2/package-lock.json
+/FPR2/package.json
+
+# Node modules (todas as pastas)
+node_modules/
+*/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage / testes
+coverage/
+.nyc_output/
+
+# Dependências opcionais
+node_modules/
+jspm_packages/
+
+# Build / dist
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+
+# Arquivos de ambiente
+.env
+.env.*
+!.env.example
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos temporários
+tmp/
+temp/
+
+# Arquivos de lock (opcional - remova se quiser versionar)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# TypeScript
+*.tsbuildinfo
+
+# Docker
+docker-compose.override.yml
+
+# Arquivos locais
+.local/
