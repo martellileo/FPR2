@@ -1,7 +1,11 @@
 # Angular local
-/FPR2/node_modules
+/FPR2/node_modules/
 /FPR2/package-lock.json
 /FPR2/package.json
+/FPR2/*/.angular/
+.angular/
+*/.angular/
+
 
 # Node modules (todas as pastas)
 node_modules/

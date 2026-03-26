@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "formulario": {
+    "forms": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "formulario:build:production"
+              "buildTarget": "forms:build:production"
             },
             "development": {
-              "buildTarget": "formulario:build:development"
+              "buildTarget": "forms:build:development"
             }
           },
           "defaultConfiguration": "development"

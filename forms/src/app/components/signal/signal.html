@@ -1,0 +1,22 @@
+<p>
+    Contador: {{ exemploCount() }}
+</p>
+
+<p>
+    Objeto: {{ exemploObj() | json }}
+</p>
+
+<p>
+    Computed: {{ exemploComputed() }}
+</p>
+
+<p>
+    Show computed: {{ showComputed() }}
+</p>
+
+<p>
+    {{ testeFuncao() }}
+</p>
+
+<button (click)="executar()">Executar</button>
+<button (click)="alterar()">Alterar</button>
