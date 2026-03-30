@@ -1,4 +1,5 @@
 <p>page1 works!</p>
 
-<a routerLink="/page2/1">page2</a>
+<a routerLink="/page2/1" [queryParams]="{nome: 'Leo', idade: 20}">page2</a>
+
 <button (click)="redirecionar()">Redirecionar</button>

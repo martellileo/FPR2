@@ -18,7 +18,17 @@ export class Page1 {
       endereco: "Rua teste, 100"
     }
 
-    this.router.navigate(['/page2', 100], {state: pessoa})    
+    // dynamic data
+    // this.router.navigate(['/page2/1'], {state: pessoa})    
+  
+    // query params
+    // http://localhost:4200/page2/1?name=Leo&idade=20
+    this.router.navigate(['/page2/1'], {
+      queryParams: {
+        nome: "Leo",
+        idade: 20
+      }
+    })
   }
 
 }
