@@ -1,9 +1,5 @@
 <h1>Http Client</h1>
 
-<ol>
-  @for (post of posts; track post.id) {
-    <li> {{post.title}} </li>   
-  }
-</ol>
+<button (click)="listarPosts()">Listar Posts</button>
 
 <router-outlet />

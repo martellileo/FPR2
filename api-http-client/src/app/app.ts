@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Api } from './services/api';
 import { Post } from './models/post.model';
 
@@ -11,26 +11,10 @@ import { Post } from './models/post.model';
 })
 export class App {
   protected readonly title = signal('api-http-client');
-
+  private router = inject(Router);
   private api = inject(Api);
-  protected posts: Post[] = [];
 
-  constructor() {
-    this.obterPosts();
-  }
-
-  protected obterPosts() {
-    this.api.obterPosts().subscribe({
-      //sucesso
-      next: (posts) => {
-        console.log('2222')
-        this.posts = posts;
-      },
-      //erro
-      error: (e) => {
-        console.log(e)
-      }
-    })
-    console.log('3333')
+  protected listarPosts() {
+    this.router.navigate(['/posts']);
   }
 }

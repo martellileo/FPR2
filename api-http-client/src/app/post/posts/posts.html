@@ -1,0 +1,10 @@
+<ol>
+  <!-- @for (post of posts(); track post.id) {
+    <li (click)="comentarioById($index +1)"> {{post.title}} </li>   
+  } -->
+  @for (post of posts(); track post.id) {
+    <li> 
+      <a [routerLink]="['/post', post.id, 'comentarios']">{{ post.title }}</a>
+    </li>
+  }
+</ol>

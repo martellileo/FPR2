@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "api-http-client": {
+    "unsubscribe": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -24,7 +24,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"]
+            "styles": [
+              "src/styles.css"
+            ]
           },
           "configurations": {
             "production": {
@@ -45,13 +47,7 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -60,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "api-http-client:build:production"
+              "buildTarget": "unsubscribe:build:production"
             },
             "development": {
-              "buildTarget": "api-http-client:build:development"
+              "buildTarget": "unsubscribe:build:development"
             }
           },
           "defaultConfiguration": "development"

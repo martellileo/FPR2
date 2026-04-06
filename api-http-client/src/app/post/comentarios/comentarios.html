@@ -1,0 +1,13 @@
+<h2>Comentários do post</h2>
+
+<ol>
+    @for (comentario of comentarios(); track comentario.id) {
+        @for (linha of comentario.body.split('\n'); track $index) {
+             <li> 
+                {{linha}}
+            </li>
+        }
+    }
+</ol>
+
+<button (click)="voltarLista()">Voltar a lista</button>
