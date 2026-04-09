@@ -12,6 +12,6 @@ export class VendasService {
   private http = inject(HttpClient);
 
   public obterTodas() {
-    return this.http.get(this.url);
+    return this.http.get<any[]>(this.url);
   }
 }

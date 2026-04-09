@@ -1,1 +1,35 @@
-<p>vendas-table works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Cliente</th>
+      <th>Itens Comprados</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (venda of dados(); track venda.codigo) {
+      <tr>
+        <td>{{ venda.codigo }}</td>
+        <td>{{ venda.cliente }}</td>
+        <td>
+          <ul>
+            @for (item of venda.itens; track item.codigo_produto) {
+              <li>
+                {{ item.quantidade }}x {{ item.nome_produto }} 
+                ({{ item.preco }})
+              </li>
+            }
+          </ul>
+        </td>
+        <td>{{ venda.data }}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="4">Nenhuma venda encontrada.</td>
+      </tr>
+    }
+  </tbody>
+</table>
+<!-- <p> tabela </p>
+<pre>{{ dados() | json }}</pre> -->

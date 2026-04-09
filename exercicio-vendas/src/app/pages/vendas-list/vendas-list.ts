@@ -1,21 +1,24 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { VendasService } from '../../services/vendas.service';
 import { take } from 'rxjs';
+import { VendasTable } from "../../components/vendas-table/vendas-table";
 
 @Component({
   selector: 'app-vendas-list',
-  imports: [],
+  imports: [VendasTable],
   templateUrl: './vendas-list.html',
   styleUrl: './vendas-list.css',
 })
-export class VendasList {
+export class VendasList implements OnInit{
   private vendasService = inject(VendasService);
 
-  constructor() {
-    this.vendasService.obterTodas().pipe(take(1)).subscribe({
-      next: (vendas) => {
-        console.log(vendas);  
-      }
-    })
+  protected vendas = signal<any[]>([]);
+
+  constructor() {}
+
+  ngOnInit() {
+    this.vendasService.obterTodas().subscribe((dados) => {
+      this.vendas.set(dados);
+    });
   }
 }
