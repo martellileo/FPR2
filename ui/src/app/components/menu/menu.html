@@ -1,0 +1,16 @@
+<p-menubar [model]="items" breakpoint="810px">
+    <ng-template #start>
+
+    </ng-template>
+
+    <ng-template #end>
+        <div class="flex items-center gap-2">
+            <input  type="text"
+                    pInputText 
+                    placeholder="Search" 
+                    class="w-36" />
+            <p-avatar image="https://i.pinimg.com/736x/d1/ee/08/d1ee08d256e965b4bd798ed5918be3f6.jpg"
+                      shape="circle" />
+        </div>
+    </ng-template>
+</p-menubar>

@@ -1,0 +1,4 @@
+@use "primeicons/primeicons.css";
+@use "tailwindcss";
+@plugin 'tailwindcss-primeui';
+@layer tailwind, primeng;
