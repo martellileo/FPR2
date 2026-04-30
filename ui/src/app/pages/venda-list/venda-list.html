@@ -1,25 +1,85 @@
 <!-- <p>venda-list works!</p> -->
 <!-- {{ vendas$ | async }} -->
 
-<p-table [value]="(vendas$ | async)!" stripedRows [paginator]="true" [rows]="10">
+<p-table 
+    #dt
+    [value]="(vendas$ | async)!" 
+    stripedRows 
+    [paginator]="true" 
+    [rows]="10"
+    sortMode="multiple"
+    [multiSortMeta]="[{ field: 'cliente', order: 1 }]"
+    [globalFilterFields]="['codigo', 'data', 'cliente']"
+    selectionMode="single"
+    dataKey="codigo"
+    [(selection)]="selectedVenda$">
+    <!-- arrumar depois ta selecionando tudo -->
 
     <ng-template #caption>
         <div class="flex items-center justify-between">
             <span class="text-xl font-bold">Lista de Vendas</span>
+            <p-iconfield iconPosition="left" class="ml-auto">
+                <p-inputicon>
+                    <i class="pi pi-search"></i>
+                </p-inputicon>
+                <input 
+                    pInputText 
+                    type="text" 
+                    (input)="dt.filterGlobal($event.target.value, 'contains')" 
+                    placeholder="Digite a Palava-Chave" />
+            </p-iconfield>
         </div>
     </ng-template>
+
     <ng-template #header>
         <tr>
-            <th>Codigo</th>
-            <th>Data</th>
-            <th>Cliente</th>
+            <th pSortableColumn="codigo" style="width: 33%">
+                Codigo 
+                <p-sortIcon field="codigo"/>
+                <p-column-filter type="text" field="codigo" matchMode="equals" display="menu"/> 
+            </th>
+            
+            <th pSortableColumn="data" style="width: 33%">
+                Data
+                <p-sortIcon field="data"/>
+                <p-column-filter type="date" field="data" display="menu"/> 
+            </th>
+            
+            <th pSortableColumn="cliente" style="width: 33%">
+                Cliente
+                <p-sortIcon field="cliente"/>
+                <p-column-filter type="text" field="cliente" matchMode="contains" display="menu"/>
+            </th>
         </tr>
+
+        <!-- <tr>
+            <th>
+                <p-column-filter type="text" field="codigo" matchMode="equals"/>
+            </th>
+            
+            <th>
+                <p-column-filter type="date" field="data" matchMode="equals"/>
+            </th>
+
+            <th>
+                <p-column-filter type="text" field="cliente" matchMode="contains"/>
+            </th>
+        </tr> -->
     </ng-template>
+
     <ng-template #body let-venda>
-        <tr>
-            <td> {{ venda.codigo }} </td>
-            <td> {{ venda.data }} </td>
-            <td> {{ venda.cliente }} </td>
+        <tr pSelectableRow="venda">
+            <td> 
+                {{ venda.codigo }} 
+            </td>
+            
+            <td> 
+                {{ venda.data | date:'dd/MM/yyyy' }} 
+            </td>
+            
+            <td> 
+                {{ venda.cliente }} 
+            </td>
         </tr>
     </ng-template>
 
