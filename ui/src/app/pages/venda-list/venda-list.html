@@ -8,11 +8,11 @@
     [paginator]="true" 
     [rows]="10"
     sortMode="multiple"
-    [multiSortMeta]="[{ field: 'cliente', order: 1 }]"
-    [globalFilterFields]="['codigo', 'data', 'cliente']"
+    [multiSortMeta]="[{ field: 'id', order: 1 }]"
+    [globalFilterFields]="['id', 'data', 'cliente']"
     selectionMode="single"
-    dataKey="codigo"
-    [(selection)]="selectedVenda$">
+    dataKey="id"
+    [(selection)]="selectedVenda">
     <!-- arrumar depois ta selecionando tudo -->
 
     <ng-template #caption>
@@ -33,10 +33,10 @@
 
     <ng-template #header>
         <tr>
-            <th pSortableColumn="codigo" style="width: 33%">
-                Codigo 
-                <p-sortIcon field="codigo"/>
-                <p-column-filter type="text" field="codigo" matchMode="equals" display="menu"/> 
+            <th pSortableColumn="id" style="width: 33%">
+                Id 
+                <p-sortIcon field="id"/>
+                <p-column-filter type="text" field="id" matchMode="equals" display="menu"/> 
             </th>
             
             <th pSortableColumn="data" style="width: 33%">
@@ -54,7 +54,7 @@
 
         <!-- <tr>
             <th>
-                <p-column-filter type="text" field="codigo" matchMode="equals"/>
+                <p-column-filter type="text" field="id" matchMode="equals"/>
             </th>
             
             <th>
@@ -68,9 +68,9 @@
     </ng-template>
 
     <ng-template #body let-venda>
-        <tr pSelectableRow="venda">
+        <tr [pSelectableRow]="venda">
             <td> 
-                {{ venda.codigo }} 
+                {{ venda.id }} 
             </td>
             
             <td> 
@@ -82,5 +82,6 @@
             </td>
         </tr>
     </ng-template>
-
 </p-table>
+
+<p-button label="Teste" [disabled]="!selectedVenda" (onClick)="excluirSelectedVenda()"/>
