@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "email": "admin@ifsp.edu.br",
+      "password": "$2a$10$asH1ekQp2AiZcfGKg3iSluNjokKYcTCjeiu7YXS1/rTocO19ocmda",
+      "id": 1
+    }
+  ]
+}

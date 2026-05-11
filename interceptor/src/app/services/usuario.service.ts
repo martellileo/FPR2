@@ -11,12 +11,6 @@ export class UsuarioService {
   private http = inject(HttpClient);
   private token = "";
 
-  // private getHeaders() {
-  //   return new HttpHeaders()
-  //   .set('Authorization', `Bearer ${this.token}`)
-  //   .set('Content-Type', 'application/json');
-  // }
-
   public obterTodos() {
     return this.http.get<any>(`${this.baseUrl}/users`);
   }

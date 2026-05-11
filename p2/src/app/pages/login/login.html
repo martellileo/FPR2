@@ -1,0 +1,5 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <input type="email" formControlName="email" placeholder="Email" />
+  <input type="password" formControlName="password" placeholder="Senha" />
+  <button type="submit" [disabled]="loading">{{ loading ? 'Entrando...' : 'Login' }}</button>
+</form>

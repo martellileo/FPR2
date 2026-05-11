@@ -1,0 +1,45 @@
+import { Component, inject } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { UserService } from '../../services/user.service';
+
+@Component({
+  selector: 'app-login-component',
+  imports: [ReactiveFormsModule], 
+  templateUrl: './login.html',
+  styleUrl: './login.scss',
+})
+export class Login {
+  private userService = inject(UserService);
+
+  email = '';
+  password = '';
+
+  constructor() {
+
+  }
+
+  protected async login() {
+    if (!this.email || !this.password) {
+      console.log("Preencha e-mail e senha");
+      return;
+    }
+
+    const resposta = await this.userService.login(this.email, this.password);
+    
+    if (resposta) {
+      console.log("Login realizado com sucesso");
+      // // redirect para outra pagina provavelmente a home
+
+      // //testando rota privada
+      // // listar os usuarios
+      // this.userService.obterTodos().subscribe({
+      //   next: (usuarios) => {
+      //     console.log(usuarios);
+      //   }
+      // })
+
+    } else {
+      console.log("Login e/ou senha inválidos");
+    } 
+  }
+}

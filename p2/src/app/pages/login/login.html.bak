@@ -1,0 +1,17 @@
+<form (submit)="login(); $event.preventDefault()">
+  <input 
+    type="email" 
+    name="email" 
+    [value]="email" 
+    (input)="email = $any($event.target).value" 
+    placeholder="Email" />
+  <br>
+  <input 
+    type="password" 
+    name="password" 
+    [value]="password" 
+    (input)="password = $any($event.target).value" 
+    placeholder="Senha" />
+    <br>
+  <button type="submit">Login</button>
+</form>
