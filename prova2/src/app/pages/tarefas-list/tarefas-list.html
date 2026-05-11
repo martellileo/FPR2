@@ -1,0 +1,28 @@
+<p-table #dt
+         [value]="(tarefas$ | async)!"
+         [paginator]="true" [rows]="5"
+         [tableStyle]="{ 'min-width': '50rem' }"
+         [showCurrentPageReport]="true"
+         selectionMode="single"
+         stripedRows [(selection)]="selecionado" >
+  <ng-template #header>
+    <tr>
+      <th>Id</th>
+      <th>Titulo</th>
+      <th>Descrição</th>
+      <th pSortableColumn="prioridade">Prioridade</th>
+      <th>Data Limite</th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-tarefa>
+    <tr [pSelectableRow]="tarefa">
+      <td>{{ tarefa.id }}</td>
+      <td>{{ tarefa.titulo }}</td>
+      <td>{{ tarefa.descricao }}</td>
+      <td>{{ tarefa.prioridade }}</td>
+      <td>{{ tarefa.data_limite }}</td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-button [disabled]="!selecionado" (onClick)="excluir()"> teste </p-button>
