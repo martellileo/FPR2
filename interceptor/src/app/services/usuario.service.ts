@@ -21,6 +21,7 @@ export class UsuarioService {
       senha,
     };
 
+
     try {
       const resposta = await firstValueFrom(this.http.post<any>(`${this.baseUrl}/login`, usuario));
       if (resposta) {
