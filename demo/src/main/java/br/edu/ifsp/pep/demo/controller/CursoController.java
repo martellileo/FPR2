@@ -2,6 +2,7 @@ package br.edu.ifsp.pep.demo.controller;
 
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -68,8 +69,13 @@ public class CursoController {
 
     //? Put http://localhost:3000/cursos/1
     @PutMapping("/{id}")
-    public Curso alterar(@PathVariable Long id){
-        return null;
+    public ResponseEntity<Curso> alterar(@PathVariable Long id, @RequestBody CursoDTO cursoDTO){
+        return cursoRepositorio.findById(id)
+        .map( curso -> {
+            curso.setNome(cursoDTO.nome());
+            return ResponseEntity.ok(cursoRepositorio.save(curso));
+        })
+        .orElse(ResponseEntity.notFound().build());
     }
 
     //* Get http://localhost:3000/cursos/busca/like?nome=Spring
