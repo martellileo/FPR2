@@ -2,7 +2,7 @@ package br.edu.ifsp.pep.demo.controller;
 
 import java.util.List;
 
-import org.apache.catalina.connector.Response;
+// import org.apache.catalina.connector.Response;
 // import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifsp.pep.demo.model.Curso;
 import br.edu.ifsp.pep.demo.repositorio.CursoRepositorio;
 import br.edu.ifsp.pep.dto.CursoDTO;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/cursos")
@@ -48,7 +49,7 @@ public class CursoController {
     //* Post http://localhost:3000/cursos
     @PostMapping()
     @ResponseStatus(code = HttpStatus.CREATED) //* 201
-    public Curso inserir(@RequestBody CursoDTO cursoDTO){
+    public Curso inserir(@Valid @RequestBody CursoDTO cursoDTO){
         Curso curso = new Curso();
         curso.setNome(cursoDTO.nome());
         return cursoRepositorio.save(curso);
